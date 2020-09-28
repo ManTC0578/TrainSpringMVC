@@ -1,0 +1,328 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+	  <groupId>com.banvien</groupId>
+	  <artifactId>myplatform</artifactId>
+	  <version>1.0</version>
+  </parent>
+  
+  <artifactId>core</artifactId>
+   <packaging>jar</packaging>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <build>
+        <defaultGoal>install</defaultGoal>
+        <plugins>
+        	<plugin>
+        		<groupId>org.apache.maven.plugins</groupId>
+    			<artifactId>maven-surefire-plugin</artifactId>
+			    <configuration>
+			       <skip>true</skip>
+			    </configuration>
+        	</plugin>
+        	 <!--<plugin>-->
+                <!--<groupId>org.codehaus.mojo</groupId>-->
+                <!--<artifactId>sql-maven-plugin</artifactId>-->
+                <!--<version>1.4</version>-->
+
+               <!--<dependencies>-->
+                   <!--&lt;!&ndash; specify the dependent JDBC driver here &ndash;&gt;-->
+                   <!--<dependency>-->
+                       <!--<groupId>${jdbc.groupId}</groupId>-->
+                       <!--<artifactId>${jdbc.artifactId}</artifactId>-->
+                       <!--<version>${jdbc.version}</version>-->
+                   <!--</dependency>-->
+               <!--</dependencies>-->
+
+               <!--&lt;!&ndash; common configuration shared by all executions &ndash;&gt;-->
+               <!--<configuration>-->
+                   <!--<driver>${jdbc.driverClassName}</driver>-->
+                   <!--<username>${jdbc.username}</username>-->
+                   <!--<password>${jdbc.password}</password>-->
+                   <!--<url>${jdbc.url}</url>-->
+               <!--</configuration>-->
+               <!--<executions>-->
+                   <!--<execution>-->
+                       <!--<id>update-schema</id>-->
+                       <!--<phase>install</phase>-->
+                       <!--<goals>-->
+                           <!--<goal>execute</goal>-->
+                       <!--</goals>-->
+                       <!--<configuration>-->
+                           <!--<autocommit>true</autocommit>-->
+                           <!--<srcFiles>-->
+                                <!--<srcFile>src/main/sql/alter_update_db.sql</srcFile>-->
+                           <!--</srcFiles>-->
+                       <!--</configuration>-->
+                   <!--</execution>-->
+
+               <!--</executions>-->
+                 <!--</plugin>-->
+        </plugins>
+
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
+
+    </build>
+
+    <dependencies>
+    	<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-core</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+        <dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-core</artifactId>
+		    <version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-ehcache</artifactId>
+		    <version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.3.2.Final</version>
+		</dependency>
+		<dependency>
+		    <groupId>javassist</groupId>
+		    <artifactId>javassist</artifactId>
+		    <version>3.12.1.GA</version>
+		</dependency>
+		<dependency>
+        	<groupId>org.slf4j</groupId>
+             <artifactId>slf4j-api</artifactId>
+             <version>1.6.1</version>
+        </dependency>
+        <dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-log4j12</artifactId>
+		    <version>1.6.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>1.2.16</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>jcl-over-slf4j</artifactId>
+		    <version>1.6.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>net.sf.ehcache</groupId>
+		    <artifactId>ehcache-core</artifactId>
+		    <version>2.5.7</version>
+		</dependency>
+		 <dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-orm</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context-support</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+ 		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-dao</artifactId>
+		    <version>2.0.8</version>
+		</dependency>
+		<dependency>
+		    <groupId>commons-lang</groupId>
+		    <artifactId>commons-lang</artifactId>
+		    <version>2.5</version>
+		</dependency>
+		<dependency>
+		    <groupId>commons-beanutils</groupId>
+		    <artifactId>commons-beanutils-core</artifactId>
+		    <version>1.8.3</version>
+		</dependency>
+		<dependency>
+		    <groupId>maven</groupId>
+		    <artifactId>velocity</artifactId>
+		    <version>1.5-20060721.044818</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>geronimo-spec</groupId>
+                    <artifactId>geronimo-spec-javamail</artifactId>
+                </exclusion>
+            </exclusions>
+		</dependency>
+        <dependency>
+		    <groupId>commons-dbcp</groupId>
+		    <artifactId>commons-dbcp</artifactId>
+		    <version>${commons.dbcp.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>commons-pool</groupId>
+		    <artifactId>commons-pool</artifactId>
+		    <version>${commons.pool.version}</version>
+		</dependency>
+		<dependency>
+            <groupId>opensymphony</groupId>
+            <artifactId>oscache</artifactId>
+            <version>2.4.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.jms</groupId>
+                    <artifactId>jms</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jms</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+        <dependency>
+		    <groupId>javax.mail</groupId>
+		    <artifactId>mail</artifactId>
+		    <version>1.4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.8.1</version>
+		</dependency>
+    </dependencies>
+
+    <profiles>
+
+        <!-- ================= Production Settings Profile ================= -->
+        <!-- Use "-P prod" when you want to use the settings in this profile -->
+        <!-- =============================================================== -->
+        <profile>
+            <id>prod</id>
+            <build>
+                <plugins>
+                    <!-- Override location of data file for DbUnit to load (doesn't have negative keys) -->
+
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- ================= Production Settings Profile ================= -->
+        <!-- Use "-P create-db" when you want to use the settings in this profile to create database -->
+        <!-- =============================================================== -->
+        <profile>
+            <id>create-db</id>
+            <build>
+                <plugins>
+                    <!-- Override location of data file for DbUnit to load (doesn't have negative keys) -->
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>sql-maven-plugin</artifactId>
+		                <version>1.4</version>
+
+		                <dependencies>
+		                    <!-- specify the dependent JDBC driver here -->
+		                    <dependency>
+		                        <groupId>${jdbc.groupId}</groupId>
+		                        <artifactId>${jdbc.artifactId}</artifactId>
+		                        <version>${jdbc.version}</version>
+		                    </dependency>
+		                </dependencies>
+
+		                <!-- common configuration shared by all executions -->
+		                <configuration>
+		                    <driver>${jdbc.driverClassName}</driver>
+		                    <username>${jdbc.username}</username>
+		                    <password>${jdbc.password}</password>
+		                    <url>${jdbc.url}</url>
+		                </configuration>
+		                <executions>
+		                    <execution>
+		                        <id>create-schema</id>
+		                        <phase>process-test-sources</phase>
+		                        <goals>
+		                            <goal>execute</goal>
+		                        </goals>
+		                        <configuration>
+		                            <autocommit>true</autocommit>
+		                            <srcFiles>
+		                                <!-- <srcFile>src/main/sql/myplatform_create_db.sql</srcFile> -->
+		                            </srcFiles>
+		                        </configuration>
+		                    </execution>
+		                </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>init-data</id>
+            <build>
+                <plugins>
+                    <!-- Override location of data file for DbUnit to load (doesn't have negative keys) -->
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>sql-maven-plugin</artifactId>
+		                <version>1.4</version>
+
+		                <dependencies>
+		                    <!-- specify the dependent JDBC driver here -->
+		                    <dependency>
+		                        <groupId>${jdbc.groupId}</groupId>
+		                        <artifactId>${jdbc.artifactId}</artifactId>
+		                        <version>${jdbc.version}</version>
+		                    </dependency>
+		                </dependencies>
+
+		                <!-- common configuration shared by all executions -->
+		                <configuration>
+		                    <driver>${jdbc.driverClassName}</driver>
+		                    <username>${jdbc.username}</username>
+		                    <password>${jdbc.password}</password>
+		                    <url>${jdbc.url}</url>
+		                </configuration>
+		                <executions>
+		                    <execution>
+		                        <id>init-data</id>
+		                        <phase>process-test-resources</phase>
+		                        <goals>
+		                            <goal>execute</goal>
+		                        </goals>
+		                        <configuration>
+		                            <autocommit>true</autocommit>
+		                            <srcFiles>
+		                                <!-- <srcFile>src/main/sql/init_data.sql</srcFile>  -->
+		                            </srcFiles>
+		                        </configuration>
+		                    </execution>
+		                </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    
+</project>
